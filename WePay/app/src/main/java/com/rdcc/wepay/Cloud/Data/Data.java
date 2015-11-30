@@ -1,11 +1,11 @@
-package com.rdcc.wepay.Cloud.EventData;
+package com.rdcc.wepay.Cloud.Data;
 
 //TODO: Follow lecture slides on fragments
 //TODO: We need ALL event data classes to be created in a way that our fragment can work with it
 
 import java.util.UUID;
 
-public class GroupData {
+public class Data {
     private UUID mID;
     private String mTitle;
     private int mIcon;
