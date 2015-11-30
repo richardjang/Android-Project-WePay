@@ -1,0 +1,10 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<resources>
+    <string name="app_name">WePay</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="action_settings">Settings</string>
+    <string name="pay_title_hint">Enter a title for the group.</string>
+    <string name ="pay_title_label">Title</string>
+    <string name="pay_details_label">Details</string>
+    <string name="pay_solved_label">Solved</string>
+</resources>
