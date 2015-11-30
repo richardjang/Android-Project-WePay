@@ -1,4 +1,4 @@
-package com.rdcc.wepay.Cloud.Data;
+package com.rdcc.wepay.Cloud.Group;
 
 //our images are stored as ints
 //we need to translate those ints into actual bitmaps
