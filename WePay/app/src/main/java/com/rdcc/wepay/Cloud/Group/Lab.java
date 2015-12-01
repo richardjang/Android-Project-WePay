@@ -1,7 +1,20 @@
 package com.rdcc.wepay.Cloud.Group;
 
-//TODO: Follow lecture slides on fragments
-//TODO: We need ALL event data classes to be created in a way that our fragment can work with it
+
+import java.util.ArrayList;
 
 public class Lab {
+    private ArrayList<Data> data;
+    public Lab(){
+        data = new ArrayList<Data>();
+        data.add(new Data());
+        data.add(new Data());
+        data.add(new Data());
+    }
+    public ArrayList<Data> getDataList(){
+        return data;
+    }
+    public void updateLab(){
+        //TODO clear and reparse data
+    }
 }

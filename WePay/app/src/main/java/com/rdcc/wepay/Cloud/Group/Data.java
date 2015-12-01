@@ -1,48 +1,32 @@
 package com.rdcc.wepay.Cloud.Group;
 
-//TODO: Follow lecture slides on fragments
-//TODO: We need ALL event data classes to be created in a way that our fragment can work with it
+import com.rdcc.wepay.R;
 
+import java.util.Date;
 import java.util.UUID;
 
 public class Data {
-    private UUID mID;
-    private String mTitle;
-    private int mIcon;
-    private String mDescription;
-    private int mCoverPhoto;
-//TODO: convert ints to bitmaps
-//TODO: add data for event date and location, contributors, comments etc
+    public int bitmap;
+    public String name;
 
-//All our getters and setters::
-    public int getmIcon() {
-        return mIcon;
+    public Data(){
+        bitmap = R.drawable.icon;
+        name = "Ballsacks";
     }
-    public void setmIcon(int mIcon) {
-        this.mIcon = mIcon;
+
+    public int getBitmap() {
+        return bitmap;
     }
-    public int getmCoverPhoto() {
-        return mCoverPhoto;
+
+    public void setBitmap(int bitmap) {
+        this.bitmap = bitmap;
     }
-    public void setmCoverPhoto(int mCoverPhoto) {
-        this.mCoverPhoto = mCoverPhoto;
+
+    public String getName() {
+        return name;
     }
-    public String getmDescription() {
-        return mDescription;
-    }
-    public void setmDescription(String mDescription) {
-        this.mDescription = mDescription;
-    }
-    public UUID getmID() {
-        return mID;
-    }
-    public void setmID(UUID mID) {
-        this.mID = mID;
-    }
-    public String getmTitle() {
-        return mTitle;
-    }
-    public void setmTitle(String mTitle) {
-        this.mTitle = mTitle;
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

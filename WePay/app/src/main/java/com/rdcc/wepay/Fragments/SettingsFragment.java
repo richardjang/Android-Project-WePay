@@ -34,14 +34,14 @@ public class SettingsFragment extends Fragment{
         profpic = (ImageView) getActivity().findViewById(R.id.profilePic);
 
         //TODO use the database to find and set username, id, and picture
-//        logout = (Button) getActivity().findViewById(R.id.logout);
-//        logout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //TODO: LOGOUT
-//                getActivity().finish();
-//            }
-//        });
+        logout = (Button) getActivity().findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO: LOGOUT
+                getActivity().finish();
+            }
+        });
     }
 
 
