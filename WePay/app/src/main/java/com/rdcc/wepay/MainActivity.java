@@ -99,38 +99,7 @@ public class MainActivity extends Activity implements FragmentCommunicator, View
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-
-        //TODO clean this up
-
-        //we need to put some fragments into our view
-        fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-
-        //screen orientation check
-        Display display = getWindowManager().getDefaultDisplay();
-        int orient = display.getRotation();
-        if(Surface.ROTATION_0 == orient || Surface.ROTATION_180 == orient){
-            //orientation is portrait
-            orientPortrait = true;
-            setContentView(R.layout.layout_main_port);
-
-            //show group list only
-            GroupListFragment glf = new GroupListFragment();
-            ft.replace(R.id.winPort, glf, "Group Portrait");
-        }else {
-            //orientation is landscape
-            orientPortrait = false;
-            setContentView(R.layout.layout_main_land);
-
-            //show group list and welcome screen
-            GroupListFragment glf = new GroupListFragment();
-            WelcomeFragment wf = new WelcomeFragment();
-            ft.replace(R.id.win1, glf, "Group List Fragment");
-            ft.commit();
-            ft = fm.beginTransaction();
-            ft.replace(R.id.win4, wf, "Welcome Fragment");
-        }
-        ft.commit();
+        initialize();
     }
 
     @Override

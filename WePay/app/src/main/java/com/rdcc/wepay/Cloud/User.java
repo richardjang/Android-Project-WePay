@@ -1,18 +1,21 @@
 package com.rdcc.wepay.Cloud;
 
-import com.rdcc.wepay.R;
 
-/**
- * Created by User on 12/1/2015.
- */
+import com.rdcc.wepay.Cloud.Group.Bitmaps;
+
 public class User {
     private int ID;
-    private int name;
+    private String name;
     private int bitmap;
     private double funds;
+    private Bitmaps bm;
+
 
     public User(){
-        bitmap = R.drawable.icon;
+        ID = 0;
+        name = "User";
+        funds = 0;
+        bitmap = bm.conversion(4); //user icon is default profile icon
     }
 
     public int getBitmap() {
@@ -39,11 +42,11 @@ public class User {
         this.ID = ID;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 }
