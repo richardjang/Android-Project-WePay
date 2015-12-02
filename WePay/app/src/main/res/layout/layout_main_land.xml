@@ -1,62 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false"
     android:background="#FFFFFF"
-    >
+    android:baselineAligned="false"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/win1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="horizontal"
-        android:padding="1dp"
-        android:layout_weight="2"
-        >
-    </LinearLayout>
-
-    <FrameLayout
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
         android:layout_weight="1"
         >
 
         <LinearLayout
-            android:id="@+id/win4"
+            android:id="@+id/win1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_weight="2"
             android:orientation="horizontal"
-            android:padding="1dp"
-            >
-        </LinearLayout>
+            android:padding="1dp"></LinearLayout>
 
-        <LinearLayout
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/win4"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:padding="1dp"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/win2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:padding="1dp"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/win3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:padding="1dp"></LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="5"
+        android:orientation="horizontal"
+        android:padding="1dp">
+
+        <Button
+            android:id="@+id/newsPort"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:baselineAligned="false"
-            android:orientation="horizontal" >
+            android:layout_weight="1"
+            android:background="#000000" />
 
-            <LinearLayout
-                android:id="@+id/win2"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:padding="1dp"
-                >
-            </LinearLayout>
+        <Button
+            android:id="@+id/addPort"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#000000" />
 
-            <LinearLayout
-                android:id="@+id/win3"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:padding="1dp">
-            </LinearLayout>
-        </LinearLayout>
-    </FrameLayout>
+        <Button
+            android:id="@+id/searchPort"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#000000" />
 
+        <Button
+            android:id="@+id/settingsPort"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#000000" />
+    </LinearLayout>
 </LinearLayout>

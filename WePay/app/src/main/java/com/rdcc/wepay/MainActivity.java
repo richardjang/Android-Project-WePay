@@ -60,12 +60,7 @@ public class MainActivity extends Activity implements FragmentCommunicator{
             ft.replace(R.id.win1, glf, "Group List Fragment");
             ft.commit();
             ft = fm.beginTransaction();
-            ft.replace(R.id.win2, wf, "Welcome Fragment");
-            ft.commit();
-
-            SettingsFragment sf = new SettingsFragment();
-            ft = fm.beginTransaction();
-            ft.replace(R.id.win3, sf, "Settings Fragment");
+            ft.replace(R.id.win4, wf, "Welcome Fragment");
         }
         ft.commit();
     }
@@ -117,12 +112,7 @@ public class MainActivity extends Activity implements FragmentCommunicator{
             ft.replace(R.id.win1, glf, "Group List Fragment");
             ft.commit();
             ft = fm.beginTransaction();
-            ft.replace(R.id.win2, wf, "Welcome Fragment");
-            ft.commit();
-
-            SettingsFragment sf = new SettingsFragment();
-            ft = fm.beginTransaction();
-            ft.replace(R.id.win3, sf, "Settings Fragment");
+            ft.replace(R.id.win4, wf, "Welcome Fragment");
         }
         ft.commit();
     }

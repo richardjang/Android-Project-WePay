@@ -6,30 +6,33 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.rdcc.wepay.Cloud.Group.Adapter;
 import com.rdcc.wepay.Cloud.Group.Data;
 import com.rdcc.wepay.Cloud.Group.Lab;
-import com.rdcc.wepay.Cloud.Group.User;
 import com.rdcc.wepay.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class GroupListFragment extends Fragment{
+public class GroupListFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        //TODO make ListView and Populate it
+        //make ListView and Populate it
         ListView myList = (ListView) getActivity().findViewById(R.id.grouplistview);
         Lab groupLab = new Lab();
         Adapter adapter = new Adapter(getActivity(), groupLab.getDataList());
         myList.setAdapter(adapter);
+        myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Data data = (Data) parent.getItemAtPosition(position);
+
+                //TODO open group fragment using data
+            }
+        });
+
     }
 
     @Override
