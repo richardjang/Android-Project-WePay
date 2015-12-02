@@ -11,17 +11,23 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.view.Surface;
+import android.view.View;
 import android.widget.Toast;
 
+import com.rdcc.wepay.Cloud.Group.Data;
+import com.rdcc.wepay.Cloud.User;
 import com.rdcc.wepay.Fragments.FragmentCommunicator;
 import com.rdcc.wepay.Fragments.GroupListFragment;
 import com.rdcc.wepay.Fragments.SettingsFragment;
 import com.rdcc.wepay.Fragments.WelcomeFragment;
 
-public class MainActivity extends Activity implements FragmentCommunicator{
+public class MainActivity extends Activity implements FragmentCommunicator, View.OnClickListener{
     String debugTag = "Main Activity";
     boolean orientPortrait;
     FragmentManager fm;
+
+    Data dataToView; //stores a Data instance that will be used by groupView
+    User userData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +87,16 @@ public class MainActivity extends Activity implements FragmentCommunicator{
     }
 
     @Override
+    public Data retrieveData() {
+        return dataToView;
+    }
+
+    @Override
+    public User retrieveUser() {
+        return userData;
+    }
+
+    @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
 
@@ -115,5 +131,10 @@ public class MainActivity extends Activity implements FragmentCommunicator{
             ft.replace(R.id.win4, wf, "Welcome Fragment");
         }
         ft.commit();
+    }
+
+    @Override
+    public void onClick(View v) {
+        //this is for our nav bar at the bottom
     }
 }

@@ -1,69 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="1"
+        android:layout_weight="3"
         android:orientation="horizontal"
-        >
+        android:padding="5dp">
+
         <ImageView
             android:id="@+id/groupIcon"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="3"
-            android:background="#000000"
-            />
+            android:background="#000000" />
+
         <TextView
             android:id="@+id/groupName"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:text="NAME"
-            />
+            android:text="NAME" />
     </LinearLayout>
-    <TextView
-        android:id="@+id/groupID"
+
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="2"
-        android:textAlignment="textEnd"
-        android:layout_gravity="end"
-        android:text="ID"
-        />
+        android:layout_weight="3"
+        android:padding="5dp"
+        >
+
+        <TextView
+            android:id="@+id/groupID"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="end"
+            android:layout_weight="2"
+            android:text="ID"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/groupFunds"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="FUNDS"
+            android:textAlignment="textEnd"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/groupFunds"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="2"
-        android:textAlignment="center"
-        android:text="FUNDS"
-        />
-    <TextView
+        android:padding="5dp"
         android:id="@+id/groupDescription"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:text="DESCRIPTION"
-        />
-    <Button
-        android:id="@+id/buttonAddFunds"
+        android:layout_weight="2"
+        android:text="DESCRIPTION" />
+
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="1"
-        />
-    <Button
-        android:id="@+id/buttonAdmin"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        />
-    <Button
-        android:id="@+id/buttonTreasurer"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        />
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonJoin"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="Join Group"
+                />
+            <Button
+                android:visibility="gone"
+                android:id="@+id/buttonAddFunds"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="Add Funds"
+                />
+
+            <Button
+                android:visibility="invisible"
+                android:id="@+id/buttonAdmin"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="Admin"
+                />
+
+            <Button
+                android:visibility="invisible"
+                android:id="@+id/buttonTreasurer"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="Treasurer"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/emptyArea"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"></LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/paymentArea"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:hint="Amount to Pay"
+                android:inputType="numberDecimal"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:text="PAY!"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/adminArea"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="Modify Group"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="Delete Group"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/treasurerArea"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/paymentHistory"
+                    />
+            </ScrollView>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="end"
+                android:layout_weight="3"
+                android:enabled="false"
+                android:text="Cash Out"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>

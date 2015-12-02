@@ -19,13 +19,6 @@ public class WelcomeFragment extends Fragment{
         super.onActivityCreated(savedInstanceState);
     }
 
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
-        super.onCreate(savedInstanceState);
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,21 +26,4 @@ public class WelcomeFragment extends Fragment{
         return inflater.inflate(R.layout.welcome, container, false);
     }
 
-    @Override
-    public void onDetach() {
-        // TODO Auto-generated method stub
-        super.onDetach();
-    }
-
-    @Override
-    public void onPause() {
-        // TODO Auto-generated method stub
-        super.onPause();
-    }
-
-    @Override
-    public void onResume() {
-        // TODO Auto-generated method stub
-        super.onResume();
-    }
 }

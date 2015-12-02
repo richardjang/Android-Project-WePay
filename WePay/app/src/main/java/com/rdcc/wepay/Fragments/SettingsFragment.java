@@ -18,9 +18,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.rdcc.wepay.Cloud.User;
 import com.rdcc.wepay.R;
 
 public class SettingsFragment extends Fragment{
+    FragmentCommunicator comm;
+    User userData;
     TextView username, userID;
     ImageView profpic;
     Button logout;
@@ -29,9 +32,16 @@ public class SettingsFragment extends Fragment{
     public void onActivityCreated(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
+        comm = (FragmentCommunicator) getActivity();
+        userData = comm.retrieveUser();
+
         username = (TextView) getActivity().findViewById(R.id.profileName);
         userID = (TextView) getActivity().findViewById(R.id.profileID);
         profpic = (ImageView) getActivity().findViewById(R.id.profilePic);
+
+        username.setText(userData.getName());
+        userID.setText("ID: " + userData.getID());
+        profpic.setImageResource(userData.getBitmap());
 
         //TODO use the database to find and set username, id, and picture
         logout = (Button) getActivity().findViewById(R.id.logout);

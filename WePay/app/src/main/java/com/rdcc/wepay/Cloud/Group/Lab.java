@@ -8,6 +8,8 @@ public class Lab {
 
     public Lab(){
         data = new ArrayList<Data>();
+
+        //sample data
         data.add(new Data());
         data.add(new Data());
         data.add(new Data());
@@ -26,4 +28,9 @@ public class Lab {
 
         //TODO clear and reparse data
     }
+
+    //private void clearDuplicates(){
+        //iterate through the list and clear the duplicate groups
+        //to save time, we aren't implementing this
+    //}
 }
