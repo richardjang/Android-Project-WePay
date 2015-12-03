@@ -1,4 +1,4 @@
-package com.rdcc.wepay.Cloud;
+package com.rdcc.wepay.Cloud.Parse;
 
 //Main class that handles all our cloud services
 //Therfore, we need more subclasses interface with the Google Cloud Platform

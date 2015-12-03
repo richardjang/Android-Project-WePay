@@ -11,21 +11,17 @@ public class Data {
     private int bitmap;
     private Bitmaps bm = new Bitmaps();
     private String name;
-    private int groupID;
+    private String groupID;
     private double groupFunds;
     private String description;
     private int adminID;
     private int treasurerID;
     private String payHistory;
 
-    //TODO private int [] contributors;
-
     public Data(){
-        Random r = new Random();
-        bitmap = bm.conversion(r.nextInt(4-1)+ 1);
-        name = "Ballsacks";
+
     }
-    public Data(int bitmap, String name, int groupID, double groupFunds, String desc, int adminID, int treasurerID, String payHistory){
+    public Data(int bitmap, String name, String groupID, double groupFunds, String desc, int adminID, int treasurerID, String payHistory){
         this.bitmap = bitmap;
         this.name = name;
         this.groupID = groupID;
@@ -92,11 +88,11 @@ public class Data {
         this.groupFunds = groupFunds;
     }
 
-    public int getGroupID() {
+    public String getGroupID() {
         return groupID;
     }
 
-    public void setGroupID(int groupID) {
+    public void setGroupID(String groupID) {
         this.groupID = groupID;
     }
 }

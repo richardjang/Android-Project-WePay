@@ -5,17 +5,14 @@ import com.rdcc.wepay.Cloud.Group.Bitmaps;
 
 public class User {
 
-    private int ID;
+    private String ID;
     private String name;
     private int bitmap;
     private double funds;
     private Bitmaps bm = new Bitmaps();
 
-    //TODO
-    int [] groupIDs;
-
     public User(){
-        ID = 0;
+        ID = "";
         name = "User";
         funds = 0;
         bitmap = bm.conversion(4); //user icon is default profile icon
@@ -37,11 +34,11 @@ public class User {
         this.funds = funds;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 

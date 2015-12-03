@@ -138,6 +138,7 @@
                 android:layout_gravity="end"
                 android:layout_weight="1"
                 android:text="PAY!"
+                android:textSize="30dp"
                 />
         </LinearLayout>
         <LinearLayout
@@ -155,6 +156,7 @@
                 android:layout_weight="1"
                 android:enabled="false"
                 android:text="Modify Group"
+                android:textSize="30dp"
                 />
             <Button
                 android:id="@+id/adminDelete"
@@ -164,6 +166,7 @@
                 android:layout_weight="1"
                 android:enabled="false"
                 android:text="Delete Group"
+                android:textSize="30dp"
                 />
         </LinearLayout>
         <LinearLayout
@@ -172,11 +175,14 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="5dp"
+            >
             <ScrollView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
+                android:background="#CCCCCC"
                 >
                 <TextView
                     android:layout_width="fill_parent"
@@ -191,6 +197,7 @@
                 android:layout_gravity="end"
                 android:layout_weight="3"
                 android:text="Cash Out"
+                android:textSize="15dp"
                 />
         </LinearLayout>
     </LinearLayout>

@@ -34,8 +34,6 @@ public class GroupFragment extends Fragment implements View.OnClickListener{
         myData = comm.retrieveData();
         userData = comm.retrieveUser();
         if(myData != null && userData != null){
-            //TODO fill up everything from database
-
             ImageView img = (ImageView) getActivity().findViewById(R.id.groupIcon);
             img.setImageResource(myData.getBitmap());
 
@@ -50,11 +48,6 @@ public class GroupFragment extends Fragment implements View.OnClickListener{
 
             TextView groupDesc = (TextView) getActivity().findViewById(R.id.groupDescription);
             groupDesc.setText(myData.getDescription());
-
-            //TODO check if user is part of group
-            //if part of the group, make "Join Group" Disabled and "Add Funds" Enabled
-            //if admin, make "Admin" button Enabled
-            //if treasure, make "Treasurer" button Enabled
 
             empty = (LinearLayout) getActivity().findViewById(R.id.emptyArea);
             joinGroup = (Button) getActivity().findViewById(R.id.buttonJoin);
@@ -81,6 +74,18 @@ public class GroupFragment extends Fragment implements View.OnClickListener{
             payNow = (Button) getActivity().findViewById(R.id.treasurerCashOut);
             payNow.setOnClickListener(this);
 
+            //TODO check if user is part of group
+            //if part of the group, make "Join Group" Disabled and "Add Funds" Enabled
+            //if admin, make "Admin" button Enabled
+            //if treasure, make "Treasurer" button Enabled
+
+            if(userData.getID() == myData.getAdminID()){
+                adminArea.setVisibility(View.VISIBLE);
+            }
+            if(userData.getID() == myData.getTreasurerID()){
+                treasurerArea.setVisibility(View.VISIBLE);
+            }
+
         }else Log.d("Group Fragment", "No Data");
     }
 
@@ -98,12 +103,14 @@ public class GroupFragment extends Fragment implements View.OnClickListener{
                 //TODO User joins the group and the add funds button appears
 
                 joinGroup.setVisibility(View.GONE);
+                empty.setVisibility(View.GONE);
                 addFunds.setVisibility(View.VISIBLE);
                 break;
             case R.id.buttonAddFunds:
                 payment.setVisibility(View.VISIBLE);
                 admin.setVisibility(View.GONE);
                 treasurer.setVisibility(View.GONE);
+                empty.setVisibility(View.GONE);
                 break;
             case R.id.addPay:
                 if(!addAmount.getText().toString().equals("")){
@@ -120,11 +127,13 @@ public class GroupFragment extends Fragment implements View.OnClickListener{
                 admin.setVisibility(View.VISIBLE);
                 payment.setVisibility(View.GONE);
                 treasurer.setVisibility(View.GONE);
+                empty.setVisibility(View.GONE);
                 break;
             case R.id.buttonTreasurer:
                 treasurer.setVisibility(View.VISIBLE);
                 payment.setVisibility(View.GONE);
                 admin.setVisibility(View.GONE);
+                empty.setVisibility(View.GONE);
                 break;
             case R.id.treasurerCashOut:
                 myData.setPayHistory(myData.getPayHistory() +
