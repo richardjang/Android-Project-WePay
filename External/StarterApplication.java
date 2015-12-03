@@ -9,6 +9,7 @@
 package com.parse.starter;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.parse.Parse;
 import com.parse.ParseACL;
@@ -22,18 +23,56 @@ public class StarterApplication extends Application {
   public void onCreate() {
     super.onCreate();
 
-
-
     // Enable Local Datastore.
- //   Parse.enableLocalDatastore(this);
+    Parse.enableLocalDatastore(this);
 
     // Add your initialization code here
     Parse.initialize(this, "uAGZNC52nB88M9xMSFaa89hEPQuCAn6vAozFrunJ", "XqKm1Xi6Y4apeHFbLKzW7xKxbOFJHRxNYv79cHvU");
 
-//    ParseObject testObject = new ParseObject("NEW");
-//    testObject.put("foo", "foolish");
-//    testObject.put("foo2", "hi there");
+//    ParseObject testObject = new ParseObject("THISWORKS");
+//    testObject.put("foo", "bar");
 //    testObject.saveInBackground();
+//
+
+
+//    testObject.put("GroupID", 1234);
+//    testObject.put("Bitmap", 2345);
+//    testObject.put("Name", "Chheang");
+//    testObject.put("AdminID", 4567);
+//    testObject.put("Description", "None");
+//    testObject.put("PayHistory", "none");
+//    testObject.put("TreasurerID", 2345);
+//    testObject.put("GroupFunds", 9);
+//    testObject.saveInBackground();
+//
+//    UserandGroupDataBase ugb = new UserandGroupDataBase();
+//    DataDataBase ddb = new DataDataBase();
+//    UserDataBase udb = new UserDataBase();
+//
+//    Data myData = new Data();
+//    myData.setGroupID(ddb.generateUniqueGroupID());
+//    myData.setBitmap(1);
+//    myData.setTreasurerID(2);
+//    myData.setAdminID(3);
+//    myData.setName("HellWorld");
+//    myData.setPayHistory("No History");
+//    myData.setDescription("No Description");
+//    myData.setGroupFunds(0);
+
+//    User myUser = new User();
+//    myUser.setID(udb.generateUniqueUserID());
+//  //  myUser.setID(1238947);
+//    myUser.setName("Richard");
+//    myUser.setBitmap(1);
+//    myUser.setFunds(0);
+//
+//   ddb.storeGroupData(myData);
+//    udb.storeDatainDB(myUser);
+//    ugb.storeUserandGroupData(myUser.getID(), myData.getGroupID());
+//
+//    if(ugb.doesUserhaveaGroup(myUser.getID(), myData.getGroupID())){
+//      Log.d("ugb", "User is part of this group");
+//    }
 
 
 
