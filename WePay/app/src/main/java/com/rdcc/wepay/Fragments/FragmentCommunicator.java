@@ -2,8 +2,6 @@ package com.rdcc.wepay.Fragments;
 
 import com.rdcc.wepay.Cloud.Group.Data;
 import com.rdcc.wepay.Cloud.User;
-import com.rdcc.wepay.Fragments.FragmentEnums.fragmentCommands;
-import com.rdcc.wepay.Fragments.FragmentEnums.fragmentIDs;
 
 public interface FragmentCommunicator {
     public void response(int fragment, int data);

@@ -22,7 +22,7 @@ public class SplashScreen extends Activity{
             public void run() {
                 try {
                     // run splash screen for 11.5 seconds
-                    sleep(1000);// put at 1000 for testing
+                    sleep(5000);// put at 1000 for testing
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {

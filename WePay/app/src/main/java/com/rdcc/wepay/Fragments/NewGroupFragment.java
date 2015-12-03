@@ -27,27 +27,18 @@ public class NewGroupFragment extends Fragment{
         final EditText desc = (EditText) getActivity().findViewById(R.id.newDesc);
 
         RadioGroup radio = (RadioGroup) getActivity().findViewById(R.id.newRadioGroup);
-        final RadioButton rb1 = (RadioButton) getActivity().findViewById(R.id.newIcon1);
-        final RadioButton rb2 = (RadioButton) getActivity().findViewById(R.id.newIcon2);
-        final RadioButton rb3 = (RadioButton) getActivity().findViewById(R.id.newIcon3);
         radio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch(checkedId){
                     case R.id.newIcon1:
                         iconSelected = bm.conversion(1);
-                        rb2.setChecked(false);
-                        rb3.setChecked(false);
                         break;
                     case R.id.newIcon2:
                         iconSelected = bm.conversion(2);
-                        rb1.setChecked(false);
-                        rb3.setChecked(false);
                         break;
                     case R.id.newIcon3:
                         iconSelected = bm.conversion(3);
-                        rb1.setChecked(false);
-                        rb2.setChecked(false);
                         break;
                 }
             }
@@ -59,7 +50,7 @@ public class NewGroupFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 String nameString = name.getText().toString();
-                String descString = name.getText().toString();
+                String descString = desc.getText().toString();
                 int admin = comm.retrieveUser().getID();
                 int treasurer = comm.retrieveUser().getID();
                 //remember to have the user placed into contributors list
