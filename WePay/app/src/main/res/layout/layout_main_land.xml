@@ -61,36 +61,38 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="5"
+        android:layout_weight="7"
         android:orientation="horizontal"
-        android:padding="1dp">
+        android:padding="1dp"
+        android:background="#000000">
 
         <Button
-            android:id="@+id/newsPort"
+            android:id="@+id/newsLand"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="#000000" />
+            android:background="@drawable/feed" />
 
         <Button
-            android:id="@+id/addPort"
+            android:id="@+id/addLand"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="#000000" />
+            android:background="@drawable/newgroup" />
 
         <Button
-            android:id="@+id/searchPort"
+            android:id="@+id/searchLand"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="#000000" />
+            android:background="@drawable/search" />
 
         <Button
-            android:id="@+id/settingsPort"
+            android:id="@+id/settingsLand"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="#000000" />
+            android:background="@drawable/settings"
+            />
     </LinearLayout>
 </LinearLayout>

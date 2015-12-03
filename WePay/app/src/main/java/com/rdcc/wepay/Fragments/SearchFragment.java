@@ -16,10 +16,14 @@ import com.rdcc.wepay.Cloud.Group.Lab;
 import com.rdcc.wepay.R;
 
 public class SearchFragment extends Fragment{
+    FragmentCommunicator comm;
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
+
+        comm = (FragmentCommunicator) getActivity();
         final EditText searcher = (EditText) getActivity().findViewById(R.id.searchBar);
         Button searchButt = (Button) getActivity().findViewById(R.id.searchButton);
 
@@ -32,7 +36,8 @@ public class SearchFragment extends Fragment{
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Data data = (Data) parent.getItemAtPosition(position);
 
-                //TODO open group fragment using data
+                comm.setData(data);
+                comm.response(0,0);
             }
         });
 

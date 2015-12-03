@@ -15,10 +15,12 @@ import com.rdcc.wepay.Cloud.Group.Lab;
 import com.rdcc.wepay.R;
 
 public class GroupListFragment extends Fragment {
+    FragmentCommunicator comm;
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        comm = (FragmentCommunicator) getActivity();
         //make ListView and Populate it
         ListView myList = (ListView) getActivity().findViewById(R.id.grouplistview);
         Lab groupLab = new Lab();
@@ -29,7 +31,8 @@ public class GroupListFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Data data = (Data) parent.getItemAtPosition(position);
 
-                //TODO open group fragment using data
+                comm.setData(data);
+                comm.response(0,0);
             }
         });
 

@@ -4,12 +4,15 @@ package com.rdcc.wepay.Cloud;
 import com.rdcc.wepay.Cloud.Group.Bitmaps;
 
 public class User {
+
     private int ID;
     private String name;
     private int bitmap;
     private double funds;
-    private Bitmaps bm;
+    private Bitmaps bm = new Bitmaps();
 
+    //TODO
+    int [] groupIDs;
 
     public User(){
         ID = 0;

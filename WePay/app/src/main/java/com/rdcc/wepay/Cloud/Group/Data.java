@@ -9,6 +9,7 @@ import java.util.UUID;
 
 public class Data {
     private int bitmap;
+    private Bitmaps bm = new Bitmaps();
     private String name;
     private int groupID;
     private double groupFunds;
@@ -18,6 +19,22 @@ public class Data {
     private String payHistory;
 
     //TODO private int [] contributors;
+
+    public Data(){
+        Random r = new Random();
+        bitmap = bm.conversion(r.nextInt(4-1)+ 1);
+        name = "Ballsacks";
+    }
+    public Data(int bitmap, String name, int groupID, double groupFunds, String desc, int adminID, int treasurerID, String payHistory){
+        this.bitmap = bitmap;
+        this.name = name;
+        this.groupID = groupID;
+        this.groupFunds = groupFunds;
+        this.description = desc;
+        this.adminID = adminID;
+        this.treasurerID = treasurerID;
+        this.payHistory = payHistory;
+    }
 
     public int getBitmap() {
         return bitmap;

@@ -22,7 +22,7 @@ public class Bitmaps{
         ICON1(1, R.drawable.icon1),
         ICON2(2, R.drawable.icon2),
         ICON3(3, R.drawable.icon3),
-        PROF(4, R.drawable.iconProf)
+        PROF(4, R.drawable.iconprof)
         ;
 
         private myBitmaps(int id, int draw){

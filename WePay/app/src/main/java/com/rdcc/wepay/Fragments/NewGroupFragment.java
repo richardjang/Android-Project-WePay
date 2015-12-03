@@ -7,14 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.rdcc.wepay.Cloud.Group.Bitmaps;
+import com.rdcc.wepay.Cloud.Group.Data;
 import com.rdcc.wepay.R;
 
 public class NewGroupFragment extends Fragment{
     int iconSelected = 0;
     FragmentCommunicator comm;
-
+    Bitmaps bm = new Bitmaps();
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -24,18 +27,27 @@ public class NewGroupFragment extends Fragment{
         final EditText desc = (EditText) getActivity().findViewById(R.id.newDesc);
 
         RadioGroup radio = (RadioGroup) getActivity().findViewById(R.id.newRadioGroup);
+        final RadioButton rb1 = (RadioButton) getActivity().findViewById(R.id.newIcon1);
+        final RadioButton rb2 = (RadioButton) getActivity().findViewById(R.id.newIcon2);
+        final RadioButton rb3 = (RadioButton) getActivity().findViewById(R.id.newIcon3);
         radio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch(checkedId){
                     case R.id.newIcon1:
-                        iconSelected = 1;
+                        iconSelected = bm.conversion(1);
+                        rb2.setChecked(false);
+                        rb3.setChecked(false);
                         break;
                     case R.id.newIcon2:
-                        iconSelected = 2;
+                        iconSelected = bm.conversion(2);
+                        rb1.setChecked(false);
+                        rb3.setChecked(false);
                         break;
                     case R.id.newIcon3:
-                        iconSelected = 3;
+                        iconSelected = bm.conversion(3);
+                        rb1.setChecked(false);
+                        rb2.setChecked(false);
                         break;
                 }
             }
@@ -53,11 +65,14 @@ public class NewGroupFragment extends Fragment{
                 //remember to have the user placed into contributors list
                 //we also have int iconSelected
                 int groupFunds = 0;
+
                 //TODO generate a group id from parse
+                int groupID = 0;
+
                 //TODO make this new group as data in our database
-
                 //we are now done with making a new group, signal to the main activity that we finished
-
+                comm.setData(new Data(iconSelected, nameString, groupID, groupFunds, descString, admin, treasurer, ""));
+                comm.response(0,0);
             }
         });
     }

@@ -15,37 +15,38 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="10"
+        android:layout_weight="15"
         android:orientation="horizontal"
         android:padding="1dp"
+        android:background="#000000"
         >
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:id="@+id/newsPort"
-            android:background="#000000"
+            android:background="@drawable/feed"
             />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:id="@+id/addPort"
-            android:background="#000000"
+            android:background="@drawable/newgroup"
             />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:id="@+id/searchPort"
-            android:background="#000000"
+            android:background="@drawable/search"
             />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:id="@+id/settingsPort"
-            android:background="#000000"
+            android:background="@drawable/settings"
             />
     </LinearLayout>
 </LinearLayout>
